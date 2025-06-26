@@ -62,7 +62,7 @@ jobs:
           java-version: '21'
 
       - name: Run Checkstyle
-        run: mvn checkstyle:check
+        run: mvn checkstyle:checkstyle
 
       - name: Upload Checkstyle report
         if: always()
