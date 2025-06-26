@@ -1,22 +1,30 @@
 name: Examlpe Test Workflow
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
   build:
+    name: Build Job
     runs-on: ubuntu-latest
 
     steps:
       - name: Building
         run: echo Building...
+
   test:
+    name: Test Job
     runs-on: ubuntu-latest
 
     steps:
       - name: Testing
         run: echo Testing...
+
   deploy:
+    name: Deploy Job
     runs-on: ubuntu-latest
 
     steps:
