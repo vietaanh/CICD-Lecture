@@ -89,7 +89,6 @@ jobs:
           args: >
             -Dsonar.projectKey=DeVisHD_CICD-Lecture
             -Dsonar.organization=devishd
-            -Dsonar.java.binaries=target/classes
 
   lint:
     name: Lint with Checkstyle
