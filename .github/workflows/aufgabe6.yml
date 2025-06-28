@@ -93,5 +93,5 @@ jobs:
 
     steps:
     - name: Deploy Application
-      if: ${{ vars.DEPLOY_URL != ''}}
-      run: echo Deploying to ${{ github.event.inputs.environment }} environment at $DEPLOY_URL
+      if: ${{ vars.DEPLOY_URL != '' }}
+      run: echo Deploying to ${{ github.event.inputs.environment }} environment at ${{ vars.DEPLOY_URL }}
