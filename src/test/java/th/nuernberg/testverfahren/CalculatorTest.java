@@ -20,9 +20,9 @@ public class CalculatorTest {
     @Test
     void testDivideByZero() {
         Calculator calc = new Calculator();
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            calc.divide(5, 0);
-        });
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> 
+            calc.divide(5, 0)
+        );
         assertEquals("Division by zero!", exception.getMessage());
     }
 }
