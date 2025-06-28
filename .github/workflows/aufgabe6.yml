@@ -85,7 +85,8 @@ jobs:
   deploy:
     name: Deploy Application
     runs-on: ubuntu-latest
-    needs: [build-test, lint]
+    # needs: [build-test, lint]
+    needs: lint
     if: ${{ github.event.inputs.environment != '' && vars.DEPLOY_URL != '' }}
     environment:
       name: ${{ github.event.inputs.environment }}
