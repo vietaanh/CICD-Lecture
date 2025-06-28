@@ -91,6 +91,14 @@ jobs:
             -Dsonar.projectKey=DeVisHD_CICD-Lecture
             -Dsonar.organization=devishd
             -Dsonar.java.binaries=target/classes
+        
+      - name: SonarQube Quality Gate check
+        id: sonarqube-quality-gate-check
+        uses: sonarsource/sonarqube-quality-gate-action@master
+        with:
+          pollingTimeoutSec: 600
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   lint:
     name: Lint with Checkstyle
