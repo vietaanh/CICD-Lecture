@@ -82,13 +82,14 @@ jobs:
           distribution: temurin
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@v2
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
             -Dsonar.projectKey=DeVisHD_CICD-Lecture
             -Dsonar.organization=devishd
+            -Dsonar.java.binaries=target/classes
 
   lint:
     name: Lint with Checkstyle
