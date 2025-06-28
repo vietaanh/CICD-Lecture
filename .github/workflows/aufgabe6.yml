@@ -87,12 +87,11 @@ jobs:
     runs-on: ubuntu-latest
     # needs: [build-test, lint]
     needs: lint
-    if: ${{ github.event.inputs.environment != '' && vars.DEPLOY_URL != '' }}
+    if: ${{ github.event.inputs.environment != '' }}
     environment:
       name: ${{ github.event.inputs.environment }}
 
     steps:
-    - name: Setup URL
-      run: echo DEPLOY_URL=${{ vars.DEPLOY_URL || 'https:' }} >> $GITHUB_ENV
     - name: Deploy Application
+      if: ${{ vars.DEPLOY_URL != ''}}
       run: echo Deploying to ${{ github.event.inputs.environment }} environment at $DEPLOY_URL
