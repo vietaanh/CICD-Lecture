@@ -16,7 +16,7 @@ jobs:
       receiver: receiver
     steps:
       - name: Secret dialog
-        run: echo $greeting $Dialog_Partner, das Passwort für $passwort ist ${{ secrets.PASSWORT_KEY }}!
+        run: echo $greeting $receiver, das Passwort für $passwort ist ${{ secrets.PASSWORT_KEY }}!
         env:
           passwort: 'Account'
 
