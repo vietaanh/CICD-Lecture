@@ -16,9 +16,9 @@ jobs:
       receiver: receiver
     steps:
       - name: Secret dialog
-        run: echo $greeting $Dialog_Partner, das Passwort für $passwort ist ${{ secrets.LECTURE_PASSWORD }}!
+        run: echo $greeting $Dialog_Partner, das Passwort für $passwort ist ${{ secrets.PASSWORT_KEY }}!
         env:
-          passwort: 'passwort'
+          passwort: 'Account'
 
   build-test:
     strategy:
